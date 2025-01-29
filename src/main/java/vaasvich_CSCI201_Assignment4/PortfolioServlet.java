@@ -44,7 +44,7 @@ public class PortfolioServlet extends HttpServlet {
         try {
         	Class.forName("com.mysql.cj.jdbc.Driver");
         
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/JoeStocks", "root", "Tusharchoudhary12!");
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/JoeStocks", "root", "password");
         	     PreparedStatement stmt = conn.prepareStatement(
         	         "SELECT ticker, SUM(numStock) AS total_quantity, SUM(price*numStock) AS total_cost " +
         	         "FROM portfolio WHERE username = ? GROUP BY ticker")) {
